@@ -16,6 +16,19 @@ public class PlayerJump : MonoBehaviour
 
     bool IsWallSliding => _collisionDetection.IsTouchingFront;
 
+    private void OnEnable()
+    {
+        PowerUp.OnPowerUpCollected += UpdateJump;
+    }
+    private void OnDisable()
+    {
+        PowerUp.OnPowerUpCollected -= UpdateJump;
+    }
+    private void UpdateJump(int increase)
+    {
+        JumpHeight = JumpHeight * increase;
+    }
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();

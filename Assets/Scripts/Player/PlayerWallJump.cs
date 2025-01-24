@@ -9,20 +9,20 @@ public class PlayerWallJump : MonoBehaviour
 
     // Referencias
     private Rigidbody2D rb;
-    private PlayerMovement playerMovement;
+    //private PlayerMovement playerMovement;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerMovement = GetComponent<PlayerMovement>();
+        //playerMovement = GetComponent<PlayerMovement>();
     }
-    public void OnWallJump(InputAction.CallbackContext context)
+    /*public void OnWallJump(InputAction.CallbackContext context)
     {
         if (context.performed && playerMovement.IsWallSliding)
         {
             rb.linearVelocityX = -wallJumpDirection.x * wallJumpForce * Mathf.Sign(transform.localScale.x);
             rb.linearVelocityY = wallJumpDirection.y * wallJumpForce;
         }
-    }
+    }*/
  }

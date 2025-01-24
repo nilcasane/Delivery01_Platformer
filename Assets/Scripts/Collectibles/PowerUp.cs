@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public int time = 20;
-    public int increase = 10;
-    public static Action<PowerUp> OnPowerUpCollected;
+    public int increase = 2;
+    public static Action<int> OnPowerUpCollected;
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            OnPowerUpCollected?.Invoke(this);
+            OnPowerUpCollected?.Invoke(increase);
             Destroy(gameObject);
         }
     }
