@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerKiller : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerKiller : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             OnPlayerKilled?.Invoke(this);
+
+            //SceneManager.LoadScene(2);
+
         }
     }
 }
