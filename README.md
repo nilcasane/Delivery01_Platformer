@@ -1,10 +1,11 @@
-## Delivery 01 - $(Game Title)
+## Delivery 01 - Isun Happy
 
-![$(Game Title)](Screenshots/screenshot01.png "$(Game Title)")
+![Isun Happy](Screenshots/screenshot01.png "$(Game Title)")
 
 ### Description
 
-$(Your Game Description)
+2D platformer game where you can play as "Isun Happy".
+In this game you can move and jump around while picking up coins to increment the score.
 
 ### Features
 
@@ -15,9 +16,10 @@ $(Your Game Description)
 ### Controls
 
 Keyboard:
- - $(Game Control 01)
- - $(Game Control 02)
- - $(Game Control 03)
+ - WASD and Arrow Keys for player movement
+ - SPACE for player jump
+ - ENTER to start/restart game
+ - ESCAPE to exit game and close program
 
 ### Screenshots
 
@@ -25,9 +27,10 @@ _TODO: Show your game to the world, animated GIFs recommended!._
 
 ### Developers
 
- - $(Developer 01) - $(Role/Tasks Developed)
- - $(Developer 02) - $(Role/Tasks Developed)
- - $(Developer 03) - $(Role/Tasks Developed)
+ - Nil Casañé - $(Role/Tasks Developed)
+ - Alex Cordón - $(Role/Tasks Developed)
+ - Víctor Madrona - $(Role/Tasks Developed)
+ - Gonzalo Querol - $(Role/Tasks Developed)
 
 ### Links
 
@@ -41,4 +44,4 @@ This game sources are licensed under MIT license. Check [LICENSE](LICENSE) for f
 
 $(Additional Licenses)
 
-*Copyright (c) $(Year) $(Developers Names)*
+*Copyright (c) 2025 Unhappy Team*
