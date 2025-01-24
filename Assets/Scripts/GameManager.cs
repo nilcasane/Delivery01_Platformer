@@ -20,12 +20,12 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerKiller.OnPlayerKilled += GameOver;
+        //PlayerKiller.OnPlayerKilled += GameOver;
     }
 
     private void OnDisable()
     {
-        PlayerKiller.OnPlayerKilled -= GameOver;
+        //PlayerKiller.OnPlayerKilled -= GameOver;
     }
 
     private void GameOver()
