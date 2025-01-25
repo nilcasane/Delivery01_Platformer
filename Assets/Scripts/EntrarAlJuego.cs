@@ -18,7 +18,7 @@ public class EntrarAlJuego : MonoBehaviour
 
     void OnStart ()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Gameplay");
     }
 
 }

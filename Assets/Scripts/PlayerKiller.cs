@@ -12,7 +12,7 @@ public class PlayerKiller : MonoBehaviour
         {
             OnPlayerKilled?.Invoke(this);
 
-            //SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Ending");
 
         }
     }
