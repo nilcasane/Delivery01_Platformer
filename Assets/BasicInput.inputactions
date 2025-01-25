@@ -6,7 +6,7 @@
             "id": "9d810381-f52d-4340-9cf4-a6114ada2b09",
             "actions": [
                 {
-                    "name": "Start/Restart",
+                    "name": "Start",
                     "type": "Button",
                     "id": "d5a3edc1-56e5-47bb-9185-61cbfffe2bc3",
                     "expectedControlType": "",
@@ -196,10 +196,10 @@
                 {
                     "name": "",
                     "id": "f4ce7982-1492-4ae2-8afb-1b89afafceed",
-                    "path": "",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -218,11 +218,11 @@
                 {
                     "name": "",
                     "id": "6fe004e3-a577-493e-ae9c-f376b4361843",
-                    "path": "",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Start/Restart",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
