@@ -10,10 +10,8 @@ public class Coin : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             OnCoinCollected?.Invoke(this);
-            Debug.Log(GetComponent<Animator>().GetBool("IsCollected"));
             GetComponent<Animator>().SetBool("IsCollected", true);
-            Debug.Log(GetComponent<Animator>().GetBool("IsCollected"));
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

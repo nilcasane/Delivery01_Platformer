@@ -3,34 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-    public Scene scene;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnEnable()
     {
-        //PlayerKiller.OnPlayerKilled += GameOver;
+        PlayerKiller.OnPlayerKilled += GameOver;
     }
 
     private void OnDisable()
     {
-        //PlayerKiller.OnPlayerKilled -= GameOver;
+        PlayerKiller.OnPlayerKilled -= GameOver;
     }
 
     private void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        GetComponent<Animator>().SetBool("IsKilled", true);
+        SceneManager.LoadScene("Ending");
     }
-
 }
