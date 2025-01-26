@@ -26,5 +26,10 @@ public class GestorPuntos : MonoBehaviour
     {
         cantidadPuntos += puntos;
     }
-    //Mirar porque no funciona
+    
+    public float  getPuntos()
+    {
+        return cantidadPuntos;
+    }
+
 }

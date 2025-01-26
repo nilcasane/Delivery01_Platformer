@@ -9,6 +9,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            GestorPuntos.Instance.SumarPuntos(Value);
             OnCoinCollected?.Invoke(this);
             GetComponent<Animator>().SetBool("IsCollected", true);
             Destroy(gameObject);
