@@ -10,9 +10,12 @@ public class PlayerJump : MonoBehaviour
     public ContactFilter2D filter;
 
     private Rigidbody2D _rigidbody;
+    private Animator _animator;
     private CollisionDetection _collisionDetection;
     private float _lastVelocityY;
     private float _jumpStartedTime;
+    private int AvailableJumps = 0;
+    private int MaximumJumps = 2;
 
     bool IsWallSliding => _collisionDetection.IsTouchingFront;
 
@@ -24,36 +27,58 @@ public class PlayerJump : MonoBehaviour
     {
         PowerUp.OnPowerUpCollected -= UpdateJump;
     }
-    private void UpdateJump(int increase)
+    private void UpdateJump()
     {
-        JumpHeight = JumpHeight * increase;
+        JumpHeight += 5;
+        //DistanceToMaxHeight += increase;
+        //PressTimeToMaxJump += increase;
     }
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _collisionDetection = GetComponent<CollisionDetection>();
+        _animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         if (IsPeakReached()) TweakGravity();
-        if (IsWallSliding) SetWallSlide();
+        if (IsWallSliding)
+        {
+            SetWallSlide();
+            AvailableJumps = MaximumJumps;
+        }
+        if (_collisionDetection.IsGrounded)
+        {
+            AvailableJumps = MaximumJumps;
+        }
+        // Si el jugador no está en el suelo, restamos un salto.
+        else if (AvailableJumps == MaximumJumps)
+        {
+            AvailableJumps--;
+        }
     }
     // NOTE: InputSystem: "JumpStarted" action becomes "OnJumpStarted" method
     void OnJumpStarted()
     {
-        SetGravity();
-        var vel = new Vector2(_rigidbody.linearVelocity.x, GetJumpForce());
-        _rigidbody.linearVelocity = vel;
-        _jumpStartedTime = Time.time;
+        if (AvailableJumps > 0)
+        {
+            GetComponent<Animator>().SetBool("IsJumping", true);
+            AvailableJumps--;
+            SetGravity();
+            var vel = new Vector2(_rigidbody.linearVelocity.x, GetJumpForce());
+            _rigidbody.linearVelocity = vel;
+            _jumpStartedTime = Time.time;
+        }
     }
-    
+
     // NOTE: InputSystem: "JumpFinished" action becomes "OnJumpFinished" method
     void OnJumpFinished()
     {
         float fractionOfTimePressed = 1 / Mathf.Clamp01((Time.time - _jumpStartedTime) / PressTimeToMaxJump);
         _rigidbody.gravityScale *= fractionOfTimePressed;
+        _animator.SetBool("IsJumping", false);
     }
 
     private void OnDrawGizmosSelected()

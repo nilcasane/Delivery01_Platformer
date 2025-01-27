@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 600994832}
   - component: {fileID: 600994834}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,51 +491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c047eedc14d09634da7c443b262eb7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1298388880
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1298388882}
-  - component: {fileID: 1298388881}
-  m_Layer: 0
-  m_Name: ScoreManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1298388881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298388880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ad3f6e03b1ddd846b5ad686a091da0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Score: 0
---- !u!4 &1298388882
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298388880}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7967323, y: -2.0929863, z: -0.849966}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418348305
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,8 +589,8 @@ GameObject:
   - component: {fileID: 1562998489}
   - component: {fileID: 1562998488}
   - component: {fileID: 1562998487}
-  - component: {fileID: 1562998490}
   - component: {fileID: 1562998491}
+  - component: {fileID: 1562998490}
   - component: {fileID: 1562998492}
   m_Layer: 0
   m_Name: EventSystem
@@ -974,5 +929,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1873078428}
   - {fileID: 1562998489}
-  - {fileID: 1298388882}
   - {fileID: 2137077898}
