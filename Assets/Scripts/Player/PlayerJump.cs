@@ -59,12 +59,13 @@ public class PlayerJump : MonoBehaviour
             AvailableJumps--;
         }
     }
+    
     // NOTE: InputSystem: "JumpStarted" action becomes "OnJumpStarted" method
     void OnJumpStarted()
     {
         if (AvailableJumps > 0)
         {
-            GetComponent<Animator>().SetBool("IsJumping", true);
+            _animator.SetBool("IsJumping", true);
             AvailableJumps--;
             SetGravity();
             var vel = new Vector2(_rigidbody.linearVelocity.x, GetJumpForce());
@@ -76,9 +77,9 @@ public class PlayerJump : MonoBehaviour
     // NOTE: InputSystem: "JumpFinished" action becomes "OnJumpFinished" method
     void OnJumpFinished()
     {
+        _animator.SetBool("IsJumping", false);
         float fractionOfTimePressed = 1 / Mathf.Clamp01((Time.time - _jumpStartedTime) / PressTimeToMaxJump);
         _rigidbody.gravityScale *= fractionOfTimePressed;
-        _animator.SetBool("IsJumping", false);
     }
 
     private void OnDrawGizmosSelected()
