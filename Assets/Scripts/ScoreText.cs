@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreText : MonoBehaviour
+public class TitleScore : MonoBehaviour
 {
     private Text _label;
     private void Awake()

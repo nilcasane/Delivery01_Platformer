@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndingGameManager : MonoBehaviour
+public class EndingScene : MonoBehaviour
 {
     void OnStart()
     {
