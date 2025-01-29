@@ -23,7 +23,7 @@ Keyboard:
 
 ### Screenshots
 
-_TODO: Show your game to the world, animated GIFs recommended!._
+![Isun Happy](Screenshots/screenshot02.png "$(Game Screenshot)")
 
 ### Developers
 
