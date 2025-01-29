@@ -23,7 +23,7 @@ Keyboard:
 
 ### Screenshots
 
-![Isun Happy](Screenshots/Screenshot02.png "$(Game Screenshot)")
+![Isun Happy](Screenshots/Gameplay.gif "$(Game Screenshot)")
 
 ### Developers
 
