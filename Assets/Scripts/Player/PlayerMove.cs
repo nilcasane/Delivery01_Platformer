@@ -28,23 +28,20 @@ public class PlayerMove : MonoBehaviour
     // NOTE: InputSystem: "move" action becomes "OnMove" method
     void OnMove(InputValue value)
     {
-        _animator.SetBool("IsMoving", true);
+        
         // Read value from control, the type depends on what
         // type of controls the action is bound to
         var inputVal = value.Get<Vector2>();
         _horizontalDir = inputVal.x;
-        // Si hace falta, giramos el sprite
+        // If needed, rotate the player
         if (_horizontalDir > 0 && !_isFacingRight || _horizontalDir < 0 && _isFacingRight)
         {
             Flip();
         }
-        float moveAnimationTime = _animator.GetCurrentAnimatorStateInfo(0).length;
-        Invoke("SetAnimationFalse", moveAnimationTime);
-        
-    }
-    void SetAnimationFalse() 
-    {
-        _animator.SetBool("IsMoving", false);
+        // If any button is pressed
+        bool isMoving = inputVal.magnitude > 0;
+        // Update the animation
+        _animator.SetBool("IsMoving", isMoving);
     }
     void Flip()
     {
