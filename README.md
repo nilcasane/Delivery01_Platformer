@@ -1,6 +1,6 @@
 ## Delivery 01 - Isun Happy
 
-![Isun Happy](Screenshots/screenshot01.png "$(Game Title)")
+![Isun Happy](Screenshots/Screenshot01.png "$(Game Title)")
 
 ### Description
 
@@ -23,7 +23,7 @@ Keyboard:
 
 ### Screenshots
 
-![Isun Happy](Screenshots/screenshot02.png "$(Game Screenshot)")
+![Isun Happy](Screenshots/Screenshot02.png "$(Game Screenshot)")
 
 ### Developers
 
