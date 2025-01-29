@@ -11,7 +11,12 @@ public class Coin : MonoBehaviour
         {
             OnCoinCollected?.Invoke(this);
             GetComponent<Animator>().SetBool("IsCollected", true);
-            Destroy(gameObject);
+            float moveAnimationTime = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+            Invoke("DestroyCoin", moveAnimationTime);
         }
+    }
+    private void DestroyCoin()
+    {
+        Destroy(gameObject);
     }
 }

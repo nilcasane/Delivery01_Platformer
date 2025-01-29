@@ -24,7 +24,7 @@ public class GameplayScene : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         animator.SetBool("IsKilled", true);
         // Esperar el tiempo de duracion de la animacion antes de cambiar de escena
-        float deathAnimationTime = animator.GetCurrentAnimatorStateInfo(0).length;
+        float deathAnimationTime = animator.GetCurrentAnimatorStateInfo(0).length+1;
         Invoke("ChangeScene", deathAnimationTime);
     }
     void ChangeScene()
